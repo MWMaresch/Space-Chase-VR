@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿/*
+ *  Class:              PlayerVechicle
+ *  Description:        Class to manage player controls/health
+ *  Authors:            Michael Maresch and George Savchenko
+ *  Revision History:   
+ *  Name:           Date:        Description:
+ *  -------------------------------------------------------------------------
+ *  George          10/11/2016      Merged Vechile and PlayerVechicle classes
+ */
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -13,17 +22,20 @@ public class PlayerVehicle : MonoBehaviour {
     public float maxTurnSpeed = 0; //we cannot turn faster than this
     public float strafeStrength = 0.01f; //how much we move to the side when holding a strafe button
     public float brakeStrength = 1.01f; //how much we slow down when braking
+    public const float CRASH_SPEED = 10f; // Threshold for crashing
+    public int health = 3; // Player health
 
     private Rigidbody _rigidbody;
     private Vector3 _curVelocity;
     private Vector3 _curRotation;
     private Vector3 _curStrafe;
+    private float _previousSpeedX, _previousSpeedZ; // Track previous speeds to check if vehicle should crash
 
     //public float brakeGripLoss; //how much we slide when braking
     //grip not implemented, may not be necessary at all to implement
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         _curVelocity = new Vector3(0, 0, 0);
         _curRotation = new Vector3(0, 0, 0);
         _rigidbody = GetComponent<Rigidbody>();
@@ -32,9 +44,11 @@ public class PlayerVehicle : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+        _previousSpeedX = _rigidbody.velocity.x;
+        _previousSpeedZ = _rigidbody.velocity.z;
+
         UpdateControls();
         transform.position += _curVelocity;
-        //
     }
 
     private void UpdateControls()
@@ -83,5 +97,18 @@ public class PlayerVehicle : MonoBehaviour {
             _curVelocity += (transform.right * strafeStrength);
         }
         //insert code to make the vehicle lean left/right when strafing
+    }
+
+    // Crash detection
+    void OnCollisionEnter(Collision col)
+    {
+        if (Mathf.Abs(_rigidbody.velocity.x - _previousSpeedX) < CRASH_SPEED && Mathf.Abs(_rigidbody.velocity.z - _previousSpeedZ) > CRASH_SPEED)
+        {
+            if (col.gameObject.name == "Obstacle") // Gameobjects need to be called Obstacle for a collision to detect
+            {
+                health--;
+                Debug.Log("You crashed.");
+            }
+        }
     }
 }
