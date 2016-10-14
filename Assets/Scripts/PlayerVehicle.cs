@@ -48,7 +48,9 @@ public class PlayerVehicle : MonoBehaviour {
         _previousSpeedZ = _rigidbody.velocity.z;
 
         UpdateControls();
-        transform.position += _curVelocity;
+        transform.position += transform.forward * _curVelocity.magnitude;
+
+        transform.position += _curStrafe;
     }
 
     private void UpdateControls()
@@ -90,12 +92,13 @@ public class PlayerVehicle : MonoBehaviour {
         //strafe
         if (Input.GetButton("StrafeLeft"))
         {
-            _curVelocity += (-transform.right * strafeStrength);
+            _curStrafe += (-transform.right * strafeStrength);
         }
         if (Input.GetButton("StrafeRight"))
         {
-            _curVelocity += (transform.right * strafeStrength);
+            _curStrafe += (transform.right * strafeStrength);
         }
+        _curStrafe /= 1.5f;
         //insert code to make the vehicle lean left/right when strafing
     }
 
