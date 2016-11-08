@@ -6,6 +6,7 @@
  *  Name:           Date:        Description:
  *  -------------------------------------------------------------------------
  *  George          10/11/2016      Merged Vechile and PlayerVechicle classes
+ *  Michael         11/08/2016      Added slip stream functionality
  */
 using UnityEngine;
 using System.Collections;
@@ -14,7 +15,9 @@ using System;
 public class PlayerVehicle : MonoBehaviour {
 
     public float maxSpeed = 1; //when accelerating, we cannot go past this speed
-    public float acceleration = 0.01f; //how much speed increases when we accelerate
+    public float slipStreamAcceleration = 0.015f; //how much speed increases when we accelerate
+    public float curAcceleration = 0.005f; //how much speed increases when we accelerate
+    public float slowAcceleration = 0.005f; //how much speed increases when we accelerate
     public float deceleration = 1.01f; //rate at which vehicle slows down when not accelerating
     public float turnStrength = 0.1f; //the higher this is, the tighter the turn
     public float turnFriction = 0.07f; //how much we slow down when turning
@@ -22,7 +25,7 @@ public class PlayerVehicle : MonoBehaviour {
     public float maxTurnSpeed = 0; //we cannot turn faster than this
     public float strafeStrength = 0.01f; //how much we move to the side when holding a strafe button
     public float brakeStrength = 1.01f; //how much we slow down when braking
-    public const float CRASH_SPEED = 10f; // Threshold for crashing
+    public const float CRASH_SPEED_THRESHOLD = 10f; // Threshold for crashing
     public int health = 3; // Player health
 
     private Rigidbody _rigidbody;
@@ -75,7 +78,7 @@ public class PlayerVehicle : MonoBehaviour {
         {
             //instead of refusing to add more speed when we're at the max,
             //we clamp it after adding more to allow velocity regarding turning to exist
-            _curVelocity += (transform.forward * acceleration);
+            _curVelocity += (transform.forward * curAcceleration);
             _curVelocity = Vector3.ClampMagnitude(_curVelocity, maxSpeed);
         }
         else
@@ -102,16 +105,34 @@ public class PlayerVehicle : MonoBehaviour {
         //insert code to make the vehicle lean left/right when strafing
     }
 
-    // Crash detection
+    // Collision detection
     void OnCollisionEnter(Collision col)
     {
-        if (Mathf.Abs(_rigidbody.velocity.x - _previousSpeedX) < CRASH_SPEED && Mathf.Abs(_rigidbody.velocity.z - _previousSpeedZ) > CRASH_SPEED)
+        if (Mathf.Abs(_rigidbody.velocity.x - _previousSpeedX) < CRASH_SPEED_THRESHOLD && Mathf.Abs(_rigidbody.velocity.z - _previousSpeedZ) > CRASH_SPEED_THRESHOLD)
         {
             if (col.gameObject.name == "Obstacle") // Gameobjects need to be called Obstacle for a collision to detect
             {
                 health--;
                 Debug.Log("You crashed.");
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "SlipStream")
+        {
+            curAcceleration = slipStreamAcceleration;
+            Debug.Log("gofast");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "SlipStream")
+        {
+            curAcceleration = slowAcceleration;
+            Debug.Log("stop going fast");
         }
     }
 }
