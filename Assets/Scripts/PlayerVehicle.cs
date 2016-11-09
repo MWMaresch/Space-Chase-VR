@@ -7,8 +7,10 @@
  *  -------------------------------------------------------------------------
  *  George          10/11/2016      Merged Vechile and PlayerVechicle classes
  *  Michael         11/08/2016      Added slip stream functionality
+ *  Angelina        11/09/2016      Added basic WarpGate collision check
  */
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 
@@ -115,6 +117,13 @@ public class PlayerVehicle : MonoBehaviour {
                 health--;
                 Debug.Log("You crashed.");
             }
+        }
+
+        if (col.gameObject.tag == "WarpGate")
+        {
+            Debug.Log("Nice");
+            SceneManager.LoadScene("scene_goal");
+
         }
     }
 
