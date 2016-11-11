@@ -1,13 +1,15 @@
 ﻿/*
  *  Class:              PlayerVechicle
  *  Description:        Class to manage player controls/health
- *  Authors:            Michael Maresch and George Savchenko
+ *  Authors:            Michael Maresch, George Savchenko, Angelina Gutierrez
  *  Revision History:   
  *  Name:           Date:        Description:
  *  -------------------------------------------------------------------------
  *  George          10/11/2016      Merged Vechile and PlayerVechicle classes
  *  Michael         11/08/2016      Added slip stream functionality
  *  Angelina        11/09/2016      Added basic WarpGate collision check
+ *  George          11/10/2016      Fixed collision detection, added health bar 
+ *                                  and you lose velocity when crashing
  */
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,14 +29,20 @@ public class PlayerVehicle : MonoBehaviour {
     public float maxTurnSpeed = 0; //we cannot turn faster than this
     public float strafeStrength = 0.01f; //how much we move to the side when holding a strafe button
     public float brakeStrength = 1.01f; //how much we slow down when braking
-    public const float CRASH_SPEED_THRESHOLD = 10f; // Threshold for crashing
-    public int health = 3; // Player health
+    public const float CRASH_SPEED_THRESHOLD = 0.6f; // Threshold for crashing
+    public float health = 100; // Player health
 
     private Rigidbody _rigidbody;
     private Vector3 _curVelocity;
     private Vector3 _curRotation;
     private Vector3 _curStrafe;
-    private float _previousSpeedX, _previousSpeedZ; // Track previous speeds to check if vehicle should crash
+    private Vector3 _previousVelocity; // Track previous speeds to check if vehicle should crash
+
+    private float healthBar = 0;
+    private Vector2 pos = new Vector2(20, 40);
+    private Vector2 size = new Vector2(60, 20);
+    private Texture2D progressBarEmpty;
+    private Texture2D progressBarFull;
 
     //public float brakeGripLoss; //how much we slide when braking
     //grip not implemented, may not be necessary at all to implement
@@ -49,13 +57,15 @@ public class PlayerVehicle : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        _previousSpeedX = _rigidbody.velocity.x;
-        _previousSpeedZ = _rigidbody.velocity.z;
+        _previousVelocity = _rigidbody.velocity;
 
         UpdateControls();
         transform.position += transform.forward * _curVelocity.magnitude;
 
         transform.position += _curStrafe;
+
+        healthBar = health/100;
+        Debug.Log(healthBar);
     }
 
     private void UpdateControls()
@@ -107,16 +117,29 @@ public class PlayerVehicle : MonoBehaviour {
         //insert code to make the vehicle lean left/right when strafing
     }
 
+    private void DoDamage(int damageAmount)
+    {
+        if (health > 0)
+        {
+            health -= damageAmount;
+            healthBar -= damageAmount / 100;
+        }
+        else
+        {
+            health = 0;
+            SceneManager.LoadScene("scene_goal"); // change to scene lose
+        }
+    }
+
     // Collision detection
     void OnCollisionEnter(Collision col)
     {
-        if (Mathf.Abs(_rigidbody.velocity.x - _previousSpeedX) < CRASH_SPEED_THRESHOLD && Mathf.Abs(_rigidbody.velocity.z - _previousSpeedZ) > CRASH_SPEED_THRESHOLD)
+        if (Mathf.Abs(_curVelocity.x - _previousVelocity.x) > CRASH_SPEED_THRESHOLD ||
+            Mathf.Abs(_curVelocity.y - _previousVelocity.y) > CRASH_SPEED_THRESHOLD ||
+            Mathf.Abs(_curVelocity.z - _previousVelocity.z) > CRASH_SPEED_THRESHOLD)
         {
-            if (col.gameObject.name == "Obstacle") // Gameobjects need to be called Obstacle for a collision to detect
-            {
-                health--;
-                Debug.Log("You crashed.");
-            }
+            _curVelocity = new Vector3(0, 0, 0); // reset speed
+            DoDamage(10); // reduce health
         }
 
         if (col.gameObject.tag == "WarpGate")
@@ -143,5 +166,21 @@ public class PlayerVehicle : MonoBehaviour {
             curAcceleration = slowAcceleration;
             Debug.Log("stop going fast");
         }
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, Screen.width, Screen.height), "X: " + _curVelocity.x + " Y: " + _curVelocity.y + " Z :" + _curVelocity.z + "\n Health : " + health);
+
+        // draw the background:
+        GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
+        GUI.Box(new Rect(0, 0, size.x, size.y), progressBarEmpty);
+
+        // draw the filled-in part:
+        GUI.BeginGroup(new Rect(0, 0, size.x * healthBar, size.y));
+        GUI.Box(new Rect(0, 0, size.x, size.y), progressBarFull);
+        GUI.EndGroup();
+
+        GUI.EndGroup();
     }
 }
