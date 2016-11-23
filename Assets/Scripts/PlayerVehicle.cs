@@ -148,6 +148,8 @@ public class PlayerVehicle : MonoBehaviour {
             SceneManager.LoadScene("scene_goal");
 
         }
+
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -156,6 +158,11 @@ public class PlayerVehicle : MonoBehaviour {
         {
             curAcceleration = slipStreamAcceleration;
             Debug.Log("gofast");
+        }
+
+        if (other.gameObject.tag == "Obstacle")
+        {
+            health--;
         }
     }
 

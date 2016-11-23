@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SlipStream
   - WarpGate
+  - Obstacle
   layers:
   - Default
   - TransparentFX
