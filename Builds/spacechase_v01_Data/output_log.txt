@@ -1,0 +1,37 @@
+Mono path[0] = 'C:/Users/Heorgi/Desktop/on-going projects/Space-Chase-VR/Builds/spacechase_v01_Data/Managed'
+Mono path[1] = 'C:/Users/Heorgi/Desktop/on-going projects/Space-Chase-VR/Builds/spacechase_v01_Data/Mono'
+Mono config path = 'C:/Users/Heorgi/Desktop/on-going projects/Space-Chase-VR/Builds/spacechase_v01_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Heorgi/Desktop/on-going projects/Space-Chase-VR/Builds/spacechase_v01_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55299
+Multi-casting "[IP] 192.168.1.104 [Port] 55299 [Flags] 2 [Guid] 1267863632 [EditorId] 3450248359 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-M8RAERV) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.1.104:55299]
+Initialize engine version: 5.4.1p1 (b9eb0361f989)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.188 seconds
+Platform assembly: C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Heorgi\Desktop\on-going projects\Space-Chase-VR\Builds\spacechase_v01_Data\Managed\System.dll (this message is harmless)
+OnLevelWasLoaded was found on OVRScreenFade
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Mono/MonoScriptCache.cpp Line: 375)
+
+desktop: 1920x1080 60Hz; virtual: 3360x1280 at -1440,-200
+<RI> Initializing input.
+<RI> Input initialized.
