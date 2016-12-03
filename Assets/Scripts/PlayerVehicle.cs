@@ -15,9 +15,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
-public class PlayerVehicle : MonoBehaviour {
+public class PlayerVehicle : NetworkBehaviour {
 
+    [SyncVar]
+    public int playerNumber = 0;
     public float maxSpeed = 1; //when accelerating, we cannot go past this speed
     public float slipStreamAcceleration = 0.015f; //how much speed increases when we accelerate
     public float curAcceleration = 0.005f; //how much speed increases when we accelerate
@@ -32,6 +36,11 @@ public class PlayerVehicle : MonoBehaviour {
     public const float CRASH_SPEED_THRESHOLD = 0.6f; // Threshold for crashing
     public float health = 100; // Player health
 
+    private Transform _mainCamera;
+    private float _cameraHeight = 0.25f;
+    private float _cameraDistance = 0.15f;
+    private Vector3 _cameraOffset; // How far back the camera should be
+
     private Rigidbody _rigidbody;
     private Vector3 _curVelocity;
     private Vector3 _curRotation;
@@ -44,28 +53,56 @@ public class PlayerVehicle : MonoBehaviour {
     private Texture2D progressBarEmpty;
     private Texture2D progressBarFull;
 
+    private GameObject text;
+    private Text t;
+    private static GlobalValues playerCounter;
+
     //public float brakeGripLoss; //how much we slide when braking
     //grip not implemented, may not be necessary at all to implement
 
     // Use this for initialization
-    void Start () {
+    public override void OnStartLocalPlayer () {
+
         _curVelocity = new Vector3(0, 0, 0);
         _curRotation = new Vector3(0, 0, 0);
         _rigidbody = GetComponent<Rigidbody>();
+
+        _cameraOffset = new Vector3(0f, _cameraHeight, -_cameraDistance);
+        _mainCamera = Camera.main.transform;
+        MoveCamera();
+
+        // Debug Shit
+        text = GameObject.Find("Text");
+        t = text.GetComponent<Text>();
+
+        playerCounter = GameObject.Find("GlobalValues").GetComponent<GlobalValues>();
+        playerCounter.numberOfPlayers++;
+
+        playerNumber = playerCounter.numberOfPlayers;
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        _previousVelocity = _rigidbody.velocity;
+        if (!isLocalPlayer)
+        {
+            Destroy(this);
+            return;
+        }
 
-        UpdateControls();
-        transform.position += transform.forward * _curVelocity.magnitude;
+            _previousVelocity = _rigidbody.velocity;
 
-        transform.position += _curStrafe;
+            UpdateControls();
+            transform.position += transform.forward * _curVelocity.magnitude;
 
-        healthBar = health/100;
-        Debug.Log(healthBar);
+            transform.position += _curStrafe;
+
+            healthBar = health / 100;
+            Debug.Log(healthBar);
+
+        MoveCamera();
+        
+        t.text = (isLocalPlayer && playerNumber > 1).ToString() + playerNumber.ToString();
     }
 
     private void UpdateControls()
@@ -166,6 +203,14 @@ public class PlayerVehicle : MonoBehaviour {
             curAcceleration = slowAcceleration;
             Debug.Log("stop going fast");
         }
+    }
+
+    void MoveCamera()
+    {
+        _mainCamera.position = transform.position;
+        _mainCamera.rotation = transform.rotation;
+        _mainCamera.Translate(_cameraOffset);
+        _mainCamera.LookAt(transform.FindChild("Front"));
     }
 
     void OnGUI()
