@@ -1,6 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ *  Class:              PlayerVecEnemyController
+ *  Description:        Class to manage the chasing enemies
+ *  Authors:            Jason Gunter
+ *  Revision History:   
+ *  Name:           Date:        Description:
+ *  -------------------------------------------------------------------------
+ *  Jason Gunter    Nov 2016     Created and finished script
+ */
+
 public class EnemyController : MonoBehaviour {
     private Transform _transform;
     private float _speed = 5.0f;

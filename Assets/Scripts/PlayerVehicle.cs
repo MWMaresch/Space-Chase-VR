@@ -1,7 +1,7 @@
 ﻿/*
  *  Class:              PlayerVechicle
  *  Description:        Class to manage player controls/health
- *  Authors:            Michael Maresch, George Savchenko, Angelina Gutierrez
+ *  Authors:            Michael Maresch, George Savchenko, Angelina Gutierrez, Jason Gunter
  *  Revision History:   
  *  Name:           Date:        Description:
  *  -------------------------------------------------------------------------
@@ -10,6 +10,8 @@
  *  Angelina        11/09/2016      Added basic WarpGate collision check
  *  George          11/10/2016      Fixed collision detection, added health bar 
  *                                  and you lose velocity when crashing
+ *  Jason           12/10/2016      Added 'Trigger' collision with warp gate, 
+ *                                  moved warp gate to new positions.
  */
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +33,16 @@ public class PlayerVehicle : MonoBehaviour {
     public float brakeStrength = 1.01f; //how much we slow down when braking
     public const float CRASH_SPEED_THRESHOLD = 0.6f; // Threshold for crashing
     public float health = 100; // Player health
+
+    //Jason's HackJob
+    public Transform WarpGate;
+    public Transform Checkpoint1;
+    public Transform Checkpoint2;
+    public Transform Checkpoint3;
+    public Transform Checkpoint4;
+    public Transform Checkpoint5;
+    private int warpGatePos = 0;
+    //END OF HAckJob
 
     private Rigidbody _rigidbody;
     private Vector3 _curVelocity;
@@ -57,6 +69,8 @@ public class PlayerVehicle : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+        MoveWarpGate();
+
         _previousVelocity = _rigidbody.velocity;
 
         UpdateControls();
@@ -65,7 +79,6 @@ public class PlayerVehicle : MonoBehaviour {
         transform.position += _curStrafe;
 
         healthBar = health/100;
-        Debug.Log(healthBar);
     }
 
     private void UpdateControls()
@@ -134,22 +147,21 @@ public class PlayerVehicle : MonoBehaviour {
     // Collision detection
     void OnCollisionEnter(Collision col)
     {
-        if (Mathf.Abs(_curVelocity.x - _previousVelocity.x) > CRASH_SPEED_THRESHOLD ||
+        if (col.gameObject.tag == "WarpGate") {
+            if (warpGatePos == 4) {
+                Debug.Log("Nice");
+                SceneManager.LoadScene("scene_goal");
+            } else {
+                warpGatePos++;
+            }          
+        } else {
+            if (Mathf.Abs(_curVelocity.x - _previousVelocity.x) > CRASH_SPEED_THRESHOLD ||
             Mathf.Abs(_curVelocity.y - _previousVelocity.y) > CRASH_SPEED_THRESHOLD ||
-            Mathf.Abs(_curVelocity.z - _previousVelocity.z) > CRASH_SPEED_THRESHOLD)
-        {
-            _curVelocity = new Vector3(0, 0, 0); // reset speed
-            DoDamage(10); // reduce health
+            Mathf.Abs(_curVelocity.z - _previousVelocity.z) > CRASH_SPEED_THRESHOLD) {
+                _curVelocity = new Vector3(0, 0, 0); // reset speed
+                DoDamage(10); // reduce health
+            }
         }
-
-        if (col.gameObject.tag == "WarpGate")
-        {
-            Debug.Log("Nice");
-            SceneManager.LoadScene("scene_goal");
-
-        }
-
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -189,5 +201,32 @@ public class PlayerVehicle : MonoBehaviour {
         GUI.EndGroup();
 
         GUI.EndGroup();
+    }
+
+    private void MoveWarpGate() {
+        switch(warpGatePos) {
+            case 0:
+                WarpGate.position = Checkpoint1.position;
+                WarpGate.rotation = Checkpoint1.rotation;
+                break;
+            case 1:
+                WarpGate.position = Checkpoint2.position;
+                WarpGate.rotation = Checkpoint2.rotation;
+                break;
+            case 2:
+                WarpGate.position = Checkpoint3.position;
+                WarpGate.rotation = Checkpoint3.rotation;
+                break;
+            case 3:
+                WarpGate.position = Checkpoint4.position;
+                WarpGate.rotation = Checkpoint4.rotation;
+                break;
+            case 4:
+                WarpGate.position = Checkpoint5.position;
+                WarpGate.rotation = Checkpoint5.rotation;
+                break;
+            default:
+                break;
+        }
     }
 }
