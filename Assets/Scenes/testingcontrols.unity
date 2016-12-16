@@ -1,15 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
-SceneSettings:
+OcclusionCullingSettings:
   m_ObjectHideFlags: 0
-  m_PVSData: 
-  m_PVSObjectsArray: []
-  m_PVSPortalsArray: []
+  serializedVersion: 2
   m_OcclusionBakeSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -80,26 +80,27 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
+    agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    accuratePlacement: 0
     minRegionArea: 2
-    cellSize: 0.16666667
     manualCellSize: 0
+    cellSize: 0.16666667
+    accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &43172288
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 43172290}
-  - 108: {fileID: 43172289}
+  - component: {fileID: 43172290}
+  - component: {fileID: 43172289}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -150,22 +151,22 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 67, y: 162.7, z: -116}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &63431477
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 63431478}
-  - 33: {fileID: 63431482}
-  - 136: {fileID: 63431481}
-  - 23: {fileID: 63431480}
-  - 114: {fileID: 63431479}
+  - component: {fileID: 63431478}
+  - component: {fileID: 63431482}
+  - component: {fileID: 63431481}
+  - component: {fileID: 63431480}
+  - component: {fileID: 63431479}
   m_Layer: 0
   m_Name: SlipStream (11)
   m_TagString: SlipStream
@@ -182,10 +183,10 @@ Transform:
   m_LocalRotation: {x: -0.6951198, y: -0.058674775, z: -0.2396858, w: 0.6752159}
   m_LocalPosition: {x: -57.04, y: -66.15, z: 83.01}
   m_LocalScale: {x: 15.000004, y: 10.469203, z: 15.000044}
-  m_LocalEulerAnglesHint: {x: -75.179, y: 84.16, z: -108.259}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: -75.179, y: 84.16, z: -108.259}
 --- !u!114 &63431479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +212,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -219,7 +222,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -251,9 +254,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 64651883}
+  - component: {fileID: 64651883}
   m_Layer: 0
   m_Name: CheckPointsHolder
   m_TagString: Untagged
@@ -270,7 +273,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.1, y: 190.4, z: -324.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 365621702}
   - {fileID: 1039073623}
@@ -279,18 +281,19 @@ Transform:
   - {fileID: 1249727605}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138473567
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 138473568}
-  - 33: {fileID: 138473572}
-  - 136: {fileID: 138473571}
-  - 23: {fileID: 138473570}
-  - 114: {fileID: 138473569}
+  - component: {fileID: 138473568}
+  - component: {fileID: 138473572}
+  - component: {fileID: 138473571}
+  - component: {fileID: 138473570}
+  - component: {fileID: 138473569}
   m_Layer: 0
   m_Name: SlipStream (18)
   m_TagString: SlipStream
@@ -307,10 +310,10 @@ Transform:
   m_LocalRotation: {x: -0.5953134, y: 0.15729316, z: 0.12788147, w: 0.77750057}
   m_LocalPosition: {x: -20.7, y: -91.28, z: 249.74}
   m_LocalScale: {x: 10, y: 11.988193, z: 10.000015}
-  m_LocalEulerAnglesHint: {x: -74.98, y: 20.636002, z: 2.49}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: -74.98, y: 20.636002, z: 2.49}
 --- !u!114 &138473569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +339,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -344,7 +349,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -376,9 +381,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 242161080}
+  - component: {fileID: 242161080}
   m_Layer: 0
   m_Name: SlipStreamContainer
   m_TagString: Untagged
@@ -395,7 +400,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 35.5, y: 216.9, z: -97.4138}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1394770697}
   - {fileID: 1165867031}
@@ -424,18 +428,19 @@ Transform:
   - {fileID: 1800968421}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257867135
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 257867136}
-  - 33: {fileID: 257867140}
-  - 136: {fileID: 257867139}
-  - 23: {fileID: 257867138}
-  - 114: {fileID: 257867137}
+  - component: {fileID: 257867136}
+  - component: {fileID: 257867140}
+  - component: {fileID: 257867139}
+  - component: {fileID: 257867138}
+  - component: {fileID: 257867137}
   m_Layer: 0
   m_Name: SlipStream (6)
   m_TagString: SlipStream
@@ -452,10 +457,10 @@ Transform:
   m_LocalRotation: {x: -0.6040974, y: 0.057908118, z: -0.1292692, w: 0.78422093}
   m_LocalPosition: {x: -16.01, y: -84.66, z: -35.82}
   m_LocalScale: {x: 15.000002, y: 20.616196, z: 15.000011}
-  m_LocalEulerAnglesHint: {x: -68.809006, y: 43.191, z: -48.833004}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -68.809006, y: 43.191, z: -48.833004}
 --- !u!114 &257867137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +486,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -489,7 +496,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -516,18 +523,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 257867135}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &272457576 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+  m_PrefabInternal: {fileID: 1597484097}
 --- !u!1 &339653781
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 339653782}
-  - 33: {fileID: 339653786}
-  - 136: {fileID: 339653785}
-  - 23: {fileID: 339653784}
-  - 114: {fileID: 339653783}
+  - component: {fileID: 339653782}
+  - component: {fileID: 339653786}
+  - component: {fileID: 339653785}
+  - component: {fileID: 339653784}
+  - component: {fileID: 339653783}
   m_Layer: 0
   m_Name: SlipStream (7)
   m_TagString: SlipStream
@@ -544,10 +555,10 @@ Transform:
   m_LocalRotation: {x: -0.6591307, y: -0.054615833, z: -0.2580564, w: 0.7042519}
   m_LocalPosition: {x: -26.7, y: -91.1, z: -1.6}
   m_LocalScale: {x: 15.000002, y: 14.44927, z: 15.000015}
-  m_LocalEulerAnglesHint: {x: -73.03001, y: 64.735, z: -90.399}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -73.03001, y: 64.735, z: -90.399}
 --- !u!114 &339653783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +584,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -581,7 +594,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -613,9 +626,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 365621702}
+  - component: {fileID: 365621702}
   m_Layer: 0
   m_Name: CheckPoint1
   m_TagString: Untagged
@@ -632,22 +645,22 @@ Transform:
   m_LocalRotation: {x: 0.70441604, y: 0.06162845, z: -0.06162845, w: 0.70441604}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 10, z: 0}
   m_Children: []
   m_Father: {fileID: 64651883}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 10, z: 0}
 --- !u!1 &419622572
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 419622573}
-  - 33: {fileID: 419622577}
-  - 136: {fileID: 419622576}
-  - 23: {fileID: 419622575}
-  - 114: {fileID: 419622574}
+  - component: {fileID: 419622573}
+  - component: {fileID: 419622577}
+  - component: {fileID: 419622576}
+  - component: {fileID: 419622575}
+  - component: {fileID: 419622574}
   m_Layer: 0
   m_Name: SlipStream (5)
   m_TagString: SlipStream
@@ -664,10 +677,10 @@ Transform:
   m_LocalRotation: {x: -0.61097175, y: -0.054430604, z: -0.21748805, w: 0.75924295}
   m_LocalPosition: {x: -5.04, y: -77.48, z: -70.44}
   m_LocalScale: {x: 15, y: 20.61619, z: 15}
-  m_LocalEulerAnglesHint: {x: -72.046005, y: 36.744003, z: -58.883003}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -72.046005, y: 36.744003, z: -58.883003}
 --- !u!114 &419622574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +706,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -701,7 +716,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -733,13 +748,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 685520113}
-  - 33: {fileID: 685520117}
-  - 136: {fileID: 685520116}
-  - 23: {fileID: 685520115}
-  - 114: {fileID: 685520114}
+  - component: {fileID: 685520113}
+  - component: {fileID: 685520117}
+  - component: {fileID: 685520116}
+  - component: {fileID: 685520115}
+  - component: {fileID: 685520114}
   m_Layer: 0
   m_Name: SlipStream (8)
   m_TagString: SlipStream
@@ -756,10 +771,10 @@ Transform:
   m_LocalRotation: {x: -0.713524, y: 0.11259085, z: -0.10285174, w: 0.68383366}
   m_LocalPosition: {x: -32.16, y: -93.01, z: 24.650002}
   m_LocalScale: {x: 15.000001, y: 13.265389, z: 15.000014}
-  m_LocalEulerAnglesHint: {x: -72.284004, y: 98.026, z: -97.245}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: -72.284004, y: 98.026, z: -97.245}
 --- !u!114 &685520114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +800,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -793,7 +810,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -825,9 +842,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 796433736}
+  - component: {fileID: 796433736}
   m_Layer: 0
   m_Name: CheckPoint3
   m_TagString: Untagged
@@ -844,22 +861,22 @@ Transform:
   m_LocalRotation: {x: 0.6903456, y: -0.15304585, z: 0.15304585, w: 0.6903456}
   m_LocalPosition: {x: -43.89, y: -41.22, z: 306.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: -25, z: 0}
   m_Children: []
   m_Father: {fileID: 64651883}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: -25, z: 0}
 --- !u!1 &835432007
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 835432008}
-  - 33: {fileID: 835432012}
-  - 136: {fileID: 835432011}
-  - 23: {fileID: 835432010}
-  - 114: {fileID: 835432009}
+  - component: {fileID: 835432008}
+  - component: {fileID: 835432012}
+  - component: {fileID: 835432011}
+  - component: {fileID: 835432010}
+  - component: {fileID: 835432009}
   m_Layer: 0
   m_Name: SlipStream (3)
   m_TagString: SlipStream
@@ -876,10 +893,10 @@ Transform:
   m_LocalRotation: {x: -0.65887296, y: 0.012156291, z: -0.11111217, w: 0.74390376}
   m_LocalPosition: {x: -5.5, y: -61.7, z: -147.4}
   m_LocalScale: {x: 23, y: 20.616184, z: 23}
-  m_LocalEulerAnglesHint: {x: -77.819, y: 51.099003, z: -59.398003}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -77.819, y: 51.099003, z: -59.398003}
 --- !u!114 &835432009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,7 +922,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -913,7 +932,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1003,13 +1022,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1038202080}
-  - 33: {fileID: 1038202084}
-  - 136: {fileID: 1038202083}
-  - 23: {fileID: 1038202082}
-  - 114: {fileID: 1038202081}
+  - component: {fileID: 1038202080}
+  - component: {fileID: 1038202084}
+  - component: {fileID: 1038202083}
+  - component: {fileID: 1038202082}
+  - component: {fileID: 1038202081}
   m_Layer: 0
   m_Name: SlipStream (23)
   m_TagString: SlipStream
@@ -1026,10 +1045,10 @@ Transform:
   m_LocalRotation: {x: -0.62447107, y: 0.50108767, z: 0.33965367, w: 0.4935407}
   m_LocalPosition: {x: 34.23, y: -73.25, z: 323.8}
   m_LocalScale: {x: 10.000002, y: 10.3792095, z: 10.0000305}
-  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 87.961}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 87.961}
 --- !u!114 &1038202081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1074,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -1063,7 +1084,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1095,9 +1116,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1039073623}
+  - component: {fileID: 1039073623}
   m_Layer: 0
   m_Name: CheckPoint2
   m_TagString: Untagged
@@ -1114,22 +1135,22 @@ Transform:
   m_LocalRotation: {x: 0.6974093, y: -0.11670625, z: 0.11670625, w: 0.6974093}
   m_LocalPosition: {x: 10.07, y: -51.26, z: 148.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: -19, z: 0}
   m_Children: []
   m_Father: {fileID: 64651883}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: -19, z: 0}
 --- !u!1 &1165867030
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1165867031}
-  - 33: {fileID: 1165867035}
-  - 136: {fileID: 1165867034}
-  - 23: {fileID: 1165867033}
-  - 114: {fileID: 1165867032}
+  - component: {fileID: 1165867031}
+  - component: {fileID: 1165867035}
+  - component: {fileID: 1165867034}
+  - component: {fileID: 1165867033}
+  - component: {fileID: 1165867032}
   m_Layer: 0
   m_Name: SlipStream (1)
   m_TagString: SlipStream
@@ -1146,10 +1167,10 @@ Transform:
   m_LocalRotation: {x: -0.6671012, y: 0.17940904, z: 0.18778107, w: 0.69823116}
   m_LocalPosition: {x: -41.3, y: -23.7, z: -291.2}
   m_LocalScale: {x: 30, y: 57.267635, z: 30.000006}
-  m_LocalEulerAnglesHint: {x: -87.367004, y: 0, z: 30.126001}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -87.367004, y: 0, z: 30.126001}
 --- !u!114 &1165867032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,7 +1196,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -1183,7 +1206,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1215,13 +1238,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1204856882}
-  - 33: {fileID: 1204856886}
-  - 136: {fileID: 1204856885}
-  - 23: {fileID: 1204856884}
-  - 114: {fileID: 1204856883}
+  - component: {fileID: 1204856882}
+  - component: {fileID: 1204856886}
+  - component: {fileID: 1204856885}
+  - component: {fileID: 1204856884}
+  - component: {fileID: 1204856883}
   m_Layer: 0
   m_Name: SlipStream (12)
   m_TagString: SlipStream
@@ -1238,10 +1261,10 @@ Transform:
   m_LocalRotation: {x: -0.69413424, y: 0.0423488, z: -0.0021991646, w: 0.7185955}
   m_LocalPosition: {x: -60.48, y: -65.11, z: 115.57}
   m_LocalScale: {x: 15.000004, y: 26.164623, z: 15.000047}
-  m_LocalEulerAnglesHint: {x: -85.86, y: 62.954002, z: -59.568005}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: -85.86, y: 62.954002, z: -59.568005}
 --- !u!114 &1204856883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,7 +1290,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -1275,7 +1300,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1307,13 +1332,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1231961584}
-  - 33: {fileID: 1231961588}
-  - 136: {fileID: 1231961587}
-  - 23: {fileID: 1231961586}
-  - 114: {fileID: 1231961585}
+  - component: {fileID: 1231961584}
+  - component: {fileID: 1231961588}
+  - component: {fileID: 1231961587}
+  - component: {fileID: 1231961586}
+  - component: {fileID: 1231961585}
   m_Layer: 0
   m_Name: SlipStream (17)
   m_TagString: SlipStream
@@ -1330,10 +1355,10 @@ Transform:
   m_LocalRotation: {x: -0.51859224, y: 0.22138828, z: 0.20132706, w: 0.80094737}
   m_LocalPosition: {x: -31.21, y: -84.08, z: 231.89}
   m_LocalScale: {x: 10.000001, y: 11.988195, z: 10.000016}
-  m_LocalEulerAnglesHint: {x: -66.886, y: 21.575, z: 13.398001}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: -66.886, y: 21.575, z: 13.398001}
 --- !u!114 &1231961585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1359,7 +1384,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -1367,7 +1394,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1399,9 +1426,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1249727605}
+  - component: {fileID: 1249727605}
   m_Layer: 0
   m_Name: CheckPoint5
   m_TagString: Untagged
@@ -1418,10 +1445,10 @@ Transform:
   m_LocalRotation: {x: 0.59636784, y: 0.3799282, z: -0.3799282, w: 0.59636784}
   m_LocalPosition: {x: 110.4, y: -43.85, z: 579.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 65, z: 0}
   m_Children: []
   m_Father: {fileID: 64651883}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 90, y: 65, z: 0}
 --- !u!1001 &1250900902
 Prefab:
   m_ObjectHideFlags: 0
@@ -4126,13 +4153,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1266960453}
-  - 33: {fileID: 1266960457}
-  - 136: {fileID: 1266960456}
-  - 23: {fileID: 1266960455}
-  - 114: {fileID: 1266960454}
+  - component: {fileID: 1266960453}
+  - component: {fileID: 1266960457}
+  - component: {fileID: 1266960456}
+  - component: {fileID: 1266960455}
+  - component: {fileID: 1266960454}
   m_Layer: 0
   m_Name: SlipStream (2)
   m_TagString: SlipStream
@@ -4149,10 +4176,10 @@ Transform:
   m_LocalRotation: {x: -0.5389558, y: 0.11697337, z: -0.007432107, w: 0.8341395}
   m_LocalPosition: {x: -9, y: -42.9, z: -207.5}
   m_LocalScale: {x: 30.000004, y: 46.57147, z: 30.000023}
-  m_LocalEulerAnglesHint: {x: -63.798004, y: 27.328001, z: -17.990002}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -63.798004, y: 27.328001, z: -17.990002}
 --- !u!114 &1266960454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4178,7 +4205,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4186,7 +4215,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4228,6 +4257,8 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
 --- !u!23 &1269935327
 MeshRenderer:
@@ -4243,7 +4274,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4251,7 +4284,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4263,13 +4296,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1291415485}
-  - 33: {fileID: 1291415489}
-  - 136: {fileID: 1291415488}
-  - 23: {fileID: 1291415487}
-  - 114: {fileID: 1291415486}
+  - component: {fileID: 1291415485}
+  - component: {fileID: 1291415489}
+  - component: {fileID: 1291415488}
+  - component: {fileID: 1291415487}
+  - component: {fileID: 1291415486}
   m_Layer: 0
   m_Name: SlipStream (16)
   m_TagString: SlipStream
@@ -4286,10 +4319,10 @@ Transform:
   m_LocalRotation: {x: -0.58584124, y: 0.2461697, z: 0.28378648, w: 0.71809185}
   m_LocalPosition: {x: -46.07, y: -78.22, z: 215.35}
   m_LocalScale: {x: 9.999998, y: 11.988184, z: 10.0000105}
-  m_LocalEulerAnglesHint: {x: -78.817, y: 6.0670004, z: 38.264}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: -78.817, y: 6.0670004, z: 38.264}
 --- !u!114 &1291415486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4315,7 +4348,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4323,7 +4358,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4355,13 +4390,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1345336009}
-  - 33: {fileID: 1345336013}
-  - 136: {fileID: 1345336012}
-  - 23: {fileID: 1345336011}
-  - 114: {fileID: 1345336010}
+  - component: {fileID: 1345336009}
+  - component: {fileID: 1345336013}
+  - component: {fileID: 1345336012}
+  - component: {fileID: 1345336011}
+  - component: {fileID: 1345336010}
   m_Layer: 0
   m_Name: SlipStream (4)
   m_TagString: SlipStream
@@ -4378,10 +4413,10 @@ Transform:
   m_LocalRotation: {x: -0.60712427, y: 0.08746042, z: -0.037150677, w: 0.7889047}
   m_LocalPosition: {x: -4.87, y: -68.31, z: -109.07}
   m_LocalScale: {x: 17, y: 20.616184, z: 17}
-  m_LocalEulerAnglesHint: {x: -72.046005, y: 36.744003, z: -32.481003}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -72.046005, y: 36.744003, z: -32.481003}
 --- !u!114 &1345336010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4407,7 +4442,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4415,7 +4452,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4523,13 +4560,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1394770697}
-  - 33: {fileID: 1394770696}
-  - 136: {fileID: 1394770695}
-  - 23: {fileID: 1394770694}
-  - 114: {fileID: 1394770693}
+  - component: {fileID: 1394770697}
+  - component: {fileID: 1394770696}
+  - component: {fileID: 1394770695}
+  - component: {fileID: 1394770694}
+  - component: {fileID: 1394770693}
   m_Layer: 0
   m_Name: SlipStream
   m_TagString: SlipStream
@@ -4562,7 +4599,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4570,7 +4609,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4606,22 +4645,22 @@ Transform:
   m_LocalRotation: {x: -0.690805, y: -0, z: -0, w: 0.7230411}
   m_LocalPosition: {x: -66.8, y: -20.5, z: -391.5}
   m_LocalScale: {x: 30, y: 57.267635, z: 30}
-  m_LocalEulerAnglesHint: {x: -87.367004, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -87.367004, y: 0, z: 0}
 --- !u!1 &1433480461
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1433480462}
-  - 33: {fileID: 1433480466}
-  - 136: {fileID: 1433480465}
-  - 23: {fileID: 1433480464}
-  - 114: {fileID: 1433480463}
+  - component: {fileID: 1433480462}
+  - component: {fileID: 1433480466}
+  - component: {fileID: 1433480465}
+  - component: {fileID: 1433480464}
+  - component: {fileID: 1433480463}
   m_Layer: 0
   m_Name: SlipStream (14)
   m_TagString: SlipStream
@@ -4638,10 +4677,10 @@ Transform:
   m_LocalRotation: {x: -0.69324774, y: 0.05498493, z: 0.010889903, w: 0.71851635}
   m_LocalPosition: {x: -63.29, y: -66.88, z: 175.75}
   m_LocalScale: {x: 9.999997, y: 11.988174, z: 10.000001}
-  m_LocalEulerAnglesHint: {x: -85.86, y: 62.954002, z: -57.395004}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: -85.86, y: 62.954002, z: -57.395004}
 --- !u!114 &1433480463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,7 +4706,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4675,7 +4716,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4707,13 +4748,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1513942046}
-  - 33: {fileID: 1513942050}
-  - 136: {fileID: 1513942049}
-  - 23: {fileID: 1513942048}
-  - 114: {fileID: 1513942047}
+  - component: {fileID: 1513942046}
+  - component: {fileID: 1513942050}
+  - component: {fileID: 1513942049}
+  - component: {fileID: 1513942048}
+  - component: {fileID: 1513942047}
   m_Layer: 0
   m_Name: SlipStream (15)
   m_TagString: SlipStream
@@ -4730,10 +4771,10 @@ Transform:
   m_LocalRotation: {x: -0.538098, y: 0.17113225, z: 0.08337239, w: 0.821105}
   m_LocalPosition: {x: -58.56, y: -71.94, z: 197.1}
   m_LocalScale: {x: 9.999997, y: 11.98818, z: 10.000007}
-  m_LocalEulerAnglesHint: {x: -65.792, y: 27.763, z: -6.4400005}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: -65.792, y: 27.763, z: -6.4400005}
 --- !u!114 &1513942047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4759,7 +4800,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4767,7 +4810,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4794,18 +4837,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1513942045}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1568422412
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2139946501}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+  m_IsPrefabParent: 0
+--- !u!4 &1568422413 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 5878f83ee6982e048a6844a7490c4a2f, type: 3}
+  m_PrefabInternal: {fileID: 1568422412}
 --- !u!1 &1576532930
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1576532935}
-  - 20: {fileID: 1576532934}
-  - 92: {fileID: 1576532933}
-  - 124: {fileID: 1576532932}
-  - 81: {fileID: 1576532931}
+  - component: {fileID: 1576532935}
+  - component: {fileID: 1576532934}
+  - component: {fileID: 1576532933}
+  - component: {fileID: 1576532932}
+  - component: {fileID: 1576532931}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4877,22 +4966,80 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.48, y: 2.641, z: -2.254}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.15000007}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1370284639}
   m_RootOrder: 67
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1597484097
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2131686620}
+    m_Modifications:
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 285fe2024a5bf254d9aa952ad38fddb3, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &1740605581
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1740605582}
-  - 33: {fileID: 1740605586}
-  - 136: {fileID: 1740605585}
-  - 23: {fileID: 1740605584}
-  - 114: {fileID: 1740605583}
+  - component: {fileID: 1740605582}
+  - component: {fileID: 1740605586}
+  - component: {fileID: 1740605585}
+  - component: {fileID: 1740605584}
+  - component: {fileID: 1740605583}
   m_Layer: 0
   m_Name: SlipStream (10)
   m_TagString: SlipStream
@@ -4909,10 +5056,10 @@ Transform:
   m_LocalRotation: {x: -0.86059964, y: -0.017901327, z: -0.32333973, w: 0.39306402}
   m_LocalPosition: {x: -48.1, y: -76.4, z: 64.7}
   m_LocalScale: {x: 15, y: 13.265404, z: 15.000028}
-  m_LocalEulerAnglesHint: {x: -43.478, y: 131.789, z: -162.37502}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: -43.478, y: 131.789, z: -162.37502}
 --- !u!114 &1740605583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4938,7 +5085,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -4946,7 +5095,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4978,13 +5127,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1764571766}
-  - 33: {fileID: 1764571770}
-  - 136: {fileID: 1764571769}
-  - 23: {fileID: 1764571768}
-  - 114: {fileID: 1764571767}
+  - component: {fileID: 1764571766}
+  - component: {fileID: 1764571770}
+  - component: {fileID: 1764571769}
+  - component: {fileID: 1764571768}
+  - component: {fileID: 1764571767}
   m_Layer: 0
   m_Name: SlipStream (22)
   m_TagString: SlipStream
@@ -5001,10 +5150,10 @@ Transform:
   m_LocalRotation: {x: -0.7520544, y: 0.27471298, z: 0.16371097, w: 0.5763209}
   m_LocalPosition: {x: 19.38, y: -76.07, z: 311.99}
   m_LocalScale: {x: 10.000002, y: 10.379204, z: 10.000025}
-  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 50.28499}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 50.28499}
 --- !u!114 &1764571767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5030,7 +5179,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5038,7 +5189,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5070,13 +5221,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1779407009}
-  - 33: {fileID: 1779407013}
-  - 136: {fileID: 1779407012}
-  - 23: {fileID: 1779407011}
-  - 114: {fileID: 1779407010}
+  - component: {fileID: 1779407009}
+  - component: {fileID: 1779407013}
+  - component: {fileID: 1779407012}
+  - component: {fileID: 1779407011}
+  - component: {fileID: 1779407010}
   m_Layer: 0
   m_Name: SlipStream (9)
   m_TagString: SlipStream
@@ -5093,10 +5244,10 @@ Transform:
   m_LocalRotation: {x: -0.7614044, y: -0.08399503, z: -0.312752, w: 0.56159985}
   m_LocalPosition: {x: -37.4, y: -89, z: 44.9}
   m_LocalScale: {x: 15.000004, y: 13.265401, z: 15.000028}
-  m_LocalEulerAnglesHint: {x: -65.176, y: 114.255005, z: -147.722}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: -65.176, y: 114.255005, z: -147.722}
 --- !u!114 &1779407010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,7 +5273,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5130,7 +5283,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5162,13 +5315,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1800968421}
-  - 33: {fileID: 1800968425}
-  - 136: {fileID: 1800968424}
-  - 23: {fileID: 1800968423}
-  - 114: {fileID: 1800968422}
+  - component: {fileID: 1800968421}
+  - component: {fileID: 1800968425}
+  - component: {fileID: 1800968424}
+  - component: {fileID: 1800968423}
+  - component: {fileID: 1800968422}
   m_Layer: 0
   m_Name: SlipStream (24)
   m_TagString: SlipStream
@@ -5185,10 +5338,10 @@ Transform:
   m_LocalRotation: {x: -0.6860321, y: 0.41281098, z: 0.2703949, w: 0.5346342}
   m_LocalPosition: {x: 52.2, y: -72.39, z: 331.22}
   m_LocalScale: {x: 10.000003, y: 10.3792095, z: 10.0000305}
-  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 72.79199}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 72.79199}
 --- !u!114 &1800968422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5214,7 +5367,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5222,7 +5377,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5254,13 +5409,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1833497354}
-  - 33: {fileID: 1833497358}
-  - 136: {fileID: 1833497357}
-  - 23: {fileID: 1833497356}
-  - 114: {fileID: 1833497355}
+  - component: {fileID: 1833497354}
+  - component: {fileID: 1833497358}
+  - component: {fileID: 1833497357}
+  - component: {fileID: 1833497356}
+  - component: {fileID: 1833497355}
   m_Layer: 0
   m_Name: SlipStream (13)
   m_TagString: SlipStream
@@ -5277,10 +5432,10 @@ Transform:
   m_LocalRotation: {x: -0.6931584, y: -0.05609978, z: -0.103655666, w: 0.7110836}
   m_LocalPosition: {x: -61.92, y: -66.20999, z: 152.52}
   m_LocalScale: {x: 10, y: 11.98817, z: 10}
-  m_LocalEulerAnglesHint: {x: -85.86, y: 62.953003, z: -76.142006}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: -85.86, y: 62.953003, z: -76.142006}
 --- !u!114 &1833497355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5306,7 +5461,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5314,7 +5471,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5346,13 +5503,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 1977381368}
-  - 33: {fileID: 1977381372}
-  - 136: {fileID: 1977381371}
-  - 23: {fileID: 1977381370}
-  - 114: {fileID: 1977381369}
+  - component: {fileID: 1977381368}
+  - component: {fileID: 1977381372}
+  - component: {fileID: 1977381371}
+  - component: {fileID: 1977381370}
+  - component: {fileID: 1977381369}
   m_Layer: 0
   m_Name: SlipStream (19)
   m_TagString: SlipStream
@@ -5369,10 +5526,10 @@ Transform:
   m_LocalRotation: {x: -0.7710456, y: 0.12025763, z: 0.16319592, w: 0.60365045}
   m_LocalPosition: {x: -12.36, y: -91.78, z: 269.01}
   m_LocalScale: {x: 9.999998, y: 11.988189, z: 10.00001}
-  m_LocalEulerAnglesHint: {x: -104.062, y: 25.900986, z: -2.6560059}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: -104.062, y: 25.900986, z: -2.6560059}
 --- !u!114 &1977381369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5398,7 +5555,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5406,7 +5565,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5438,9 +5597,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 2006526443}
+  - component: {fileID: 2006526443}
   m_Layer: 0
   m_Name: CheckPoint4
   m_TagString: Untagged
@@ -5457,22 +5616,22 @@ Transform:
   m_LocalRotation: {x: 0.69933987, y: 0.10451704, z: -0.10451704, w: 0.69933987}
   m_LocalPosition: {x: 5.25, y: -57.73, z: 512.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 17, z: 0}
   m_Children: []
   m_Father: {fileID: 64651883}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 17, z: 0}
 --- !u!1 &2057298343
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 2057298344}
-  - 33: {fileID: 2057298348}
-  - 136: {fileID: 2057298347}
-  - 23: {fileID: 2057298346}
-  - 114: {fileID: 2057298345}
+  - component: {fileID: 2057298344}
+  - component: {fileID: 2057298348}
+  - component: {fileID: 2057298347}
+  - component: {fileID: 2057298346}
+  - component: {fileID: 2057298345}
   m_Layer: 0
   m_Name: SlipStream (20)
   m_TagString: SlipStream
@@ -5489,10 +5648,10 @@ Transform:
   m_LocalRotation: {x: -0.8399918, y: 0.09907764, z: 0.17685708, w: 0.50330806}
   m_LocalPosition: {x: -4.45, y: -83.67, z: 288}
   m_LocalScale: {x: 9.999998, y: 10.37919, z: 10.000007}
-  m_LocalEulerAnglesHint: {x: -118.30299, y: 24.43399, z: -1.3590088}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: -118.30299, y: 24.43399, z: -1.3590088}
 --- !u!114 &2057298345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5518,7 +5677,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5526,7 +5687,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5558,13 +5719,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 2117593868}
-  - 33: {fileID: 2117593872}
-  - 136: {fileID: 2117593871}
-  - 23: {fileID: 2117593870}
-  - 114: {fileID: 2117593869}
+  - component: {fileID: 2117593868}
+  - component: {fileID: 2117593872}
+  - component: {fileID: 2117593871}
+  - component: {fileID: 2117593870}
+  - component: {fileID: 2117593869}
   m_Layer: 0
   m_Name: SlipStream (21)
   m_TagString: SlipStream
@@ -5581,10 +5742,10 @@ Transform:
   m_LocalRotation: {x: -0.6890406, y: 0.40776974, z: 0.26646748, w: 0.5366024}
   m_LocalPosition: {x: 4.9, y: -78.89, z: 298.82}
   m_LocalScale: {x: 9.999998, y: 10.379196, z: 10.000013}
-  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 71.94599}
   m_Children: []
   m_Father: {fileID: 242161080}
   m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: -106.926994, y: -13.709991, z: 71.94599}
 --- !u!114 &2117593869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5610,7 +5771,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 80565ecaf52ebb34f84c38def60ab5f8, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5618,7 +5781,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5650,12 +5813,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 2131686620}
-  - 33: {fileID: 2131686619}
-  - 23: {fileID: 2131686617}
-  - 136: {fileID: 2131686618}
+  - component: {fileID: 2131686620}
+  - component: {fileID: 2131686617}
+  - component: {fileID: 2131686618}
   m_Layer: 0
   m_Name: WarpGate
   m_TagString: WarpGate
@@ -5677,7 +5839,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: a30d636515bcf6c4f9ebe948f957fbf3, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5685,7 +5849,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5705,13 +5869,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604638, y: -8.131516e-20, z: -0.00000008940695}
---- !u!33 &2131686619
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2131686616}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &2131686620
 Transform:
   m_ObjectHideFlags: 0
@@ -5721,22 +5878,22 @@ Transform:
   m_LocalRotation: {x: 0.60118693, y: 0.3722558, z: -0.37225568, w: 0.6011869}
   m_LocalPosition: {x: 134.7, y: 147.1, z: 254.7}
   m_LocalScale: {x: 20, y: 0.25, z: 20}
-  m_LocalEulerAnglesHint: {x: 89.981, y: 0, z: -63.653004}
-  m_Children: []
+  m_Children:
+  - {fileID: 272457576}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 89.981, y: 0, z: -63.653004}
 --- !u!1 &2139946497
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 2139946501}
-  - 33: {fileID: 2139946500}
-  - 65: {fileID: 2139946499}
-  - 23: {fileID: 2139946498}
-  - 114: {fileID: 2139946502}
+  - component: {fileID: 2139946501}
+  - component: {fileID: 2139946499}
+  - component: {fileID: 2139946498}
+  - component: {fileID: 2139946502}
   m_Layer: 0
   m_Name: EnemyTester
   m_TagString: Untagged
@@ -5758,7 +5915,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -5766,7 +5925,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -5783,15 +5942,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &2139946500
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2139946497}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 6, y: 4, z: 5}
+  m_Center: {x: 0, y: 2, z: -1}
 --- !u!4 &2139946501
 Transform:
   m_ObjectHideFlags: 0
@@ -5799,12 +5951,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2139946497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37, y: 192.8, z: -567.6}
+  m_LocalPosition: {x: -36.929, y: 192.8, z: -567.6}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 1568422413}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2139946502
 MonoBehaviour:
   m_ObjectHideFlags: 0
